@@ -446,7 +446,7 @@
 															<a class="nav-link d-flex justify-content-between flex-column flex-center overflow-hidden active w-80px h-85px py-4" data-bs-toggle="pill" href="#kt_stats_widget_2_tab_1">
 																<!--begin::Icon-->
 																<div class="nav-icon">
-																	<img alt="" src="assets/media/svg/products-categories/t-shirt.svg" class="" />
+																	<img alt="" src="{{asset('assets/dashboard/media/svg/products-categories/t-shirt.svg')}}" class="" />
 																</div>
 																<!--end::Icon-->
 																<!--begin::Subtitle-->
@@ -465,7 +465,7 @@
 															<a class="nav-link d-flex justify-content-between flex-column flex-center overflow-hidden w-80px h-85px py-4" data-bs-toggle="pill" href="#kt_stats_widget_2_tab_2">
 																<!--begin::Icon-->
 																<div class="nav-icon">
-																	<img alt="" src="assets/media/svg/products-categories/gaming.svg" class="" />
+																	<img alt="" src="{{asset('assets/dashboard/media/svg/products-categories/gaming.svg')}}" class="" />
 																</div>
 																<!--end::Icon-->
 																<!--begin::Subtitle-->
@@ -484,7 +484,7 @@
 															<a class="nav-link d-flex justify-content-between flex-column flex-center overflow-hidden w-80px h-85px py-4" data-bs-toggle="pill" href="#kt_stats_widget_2_tab_3">
 																<!--begin::Icon-->
 																<div class="nav-icon">
-																	<img alt="" src="assets/media/svg/products-categories/watch.svg" class="" />
+																	<img alt="" src="{{asset('assets/dashboard/media/svg/products-categories/watch.svg')}}" class="" />
 																</div>
 																<!--end::Icon-->
 																<!--begin::Subtitle-->
@@ -503,7 +503,7 @@
 															<a class="nav-link d-flex justify-content-between flex-column flex-center overflow-hidden w-80px h-85px py-4" data-bs-toggle="pill" href="#kt_stats_widget_2_tab_4">
 																<!--begin::Icon-->
 																<div class="nav-icon">
-																	<img alt="" src="assets/media/svg/products-categories/gloves.svg" class="nav-icon" />
+																	<img alt="" src="{{asset('assets/dashboard/media/svg/products-categories/gloves.svg')}}" class="nav-icon" />
 																</div>
 																<!--end::Icon-->
 																<!--begin::Subtitle-->
@@ -522,7 +522,7 @@
 															<a class="nav-link d-flex justify-content-between flex-column flex-center overflow-hidden w-80px h-85px py-4" data-bs-toggle="pill" href="#kt_stats_widget_2_tab_5">
 																<!--begin::Icon-->
 																<div class="nav-icon">
-																	<img alt="" src="assets/media/svg/products-categories/shoes.svg" class="nav-icon" />
+																	<img alt="" src="{{asset('assets/dashboard/media/svg/products-categories/shoes.svg')}}" class="nav-icon" />
 																</div>
 																<!--end::Icon-->
 																<!--begin::Subtitle-->
@@ -1100,8 +1100,8 @@
 														<!--end::Title-->
 														<!--begin::Illustration-->
 														<div class="py-10 text-center">
-															<img src="assets/media/svg/illustrations/easy/2.svg" class="theme-light-show w-200px" alt="" />
-															<img src="assets/media/svg/illustrations/easy/2-dark.svg" class="theme-dark-show w-200px" alt="" />
+															<img src="{{asset('assets/dashboard/media/svg/illustrations/easy/2.svg')}}" class="theme-light-show w-200px" alt="" />
+															<img src="{{asset('assets/dashboard/media/svg/illustrations/easy/2-dark.svg')}}" class="theme-dark-show w-200px" alt="" />
 														</div>
 														<!--end::Illustration-->
 													</div>
