@@ -1,4 +1,8 @@
-				<!--begin::Header-->
+		<div class="d-flex flex-column flex-root app-root" id="kt_app_root">
+			<!--begin::Page-->
+			<div class="app-page flex-column flex-column-fluid" id="kt_app_page">
+
+<!--begin::Header-->
 				<div id="kt_app_header" class="app-header" data-kt-sticky="true" data-kt-sticky-activate="{default: true, lg: true}" data-kt-sticky-name="app-header-minimize" data-kt-sticky-offset="{default: '200px', lg: '0'}" data-kt-sticky-animation="false">
 					<!--begin::Header container-->
 					<div class="app-container container-fluid d-flex align-items-stretch justify-content-between" id="kt_app_header_container">
@@ -3072,6 +3076,7 @@
 							</div>
 							<!--end::Menu wrapper-->
 							<!--begin::Navbar-->
+              
 							<div class="app-navbar flex-shrink-0">
 								<!--begin::Search-->
 								<div class="app-navbar-item align-items-stretch ms-1 ms-md-4">
@@ -3763,7 +3768,7 @@
 								</div>
 								<!--end::Activities-->
 								<!--begin::Notifications-->
-								<div class="app-navbar-item ms-1 ms-md-4">
+								{{-- <div class="app-navbar-item ms-1 ms-md-4">
 									<!--begin::Menu- wrapper-->
 									<div class="btn btn-icon btn-custom btn-icon-muted btn-active-light btn-active-color-primary w-35px h-35px" data-kt-menu-trigger="{default: 'click', lg: 'hover'}" data-kt-menu-attach="parent" data-kt-menu-placement="bottom-end" id="kt_menu_item_wow">
 										<i class="ki-duotone ki-notification-status fs-2">
@@ -4277,7 +4282,7 @@
 									</div>
 									<!--end::Menu-->
 									<!--end::Menu wrapper-->
-								</div>
+								</div> --}}
 								<!--end::Notifications-->
 								<!--begin::Chat-->
 								<div class="app-navbar-item ms-1 ms-md-4">
@@ -4294,7 +4299,7 @@
 								</div>
 								<!--end::Chat-->
 								<!--begin::My apps links-->
-								<div class="app-navbar-item ms-1 ms-md-4">
+								{{-- <div class="app-navbar-item ms-1 ms-md-4">
 									<!--begin::Menu wrapper-->
 									<div class="btn btn-icon btn-custom btn-icon-muted btn-active-light btn-active-color-primary w-35px h-35px" data-kt-menu-trigger="{default: 'click', lg: 'hover'}" data-kt-menu-attach="parent" data-kt-menu-placement="bottom-end">
 										<i class="ki-duotone ki-element-11 fs-2">
@@ -4557,7 +4562,7 @@
 									</div>
 									<!--end::My apps-->
 									<!--end::Menu wrapper-->
-								</div>
+								</div> --}}
 								<!--end::My apps links-->
 								<!--begin::Theme mode-->
 								<div class="app-navbar-item ms-1 ms-md-4">
@@ -4637,6 +4642,28 @@
 								</div>
 								<!--end::Theme mode-->
 								<!--begin::User menu-->
+                @guest
+            										<div class="menu-item pt-5">
+											<!--begin:Menu content-->
+											<div class="menu-content">
+                     
+												<a   href="{{ route('login') }}" class="menu-heading  fw-bold fs-5 text-primary ">login</a>
+          
+											</div>
+											<!--end:Menu content-->
+										</div>
+            										<div class="menu-item pt-5">
+											<!--begin:Menu content-->
+											<div class="menu-content">
+                     @if (Route::has('register'))
+												<a  href="{{ route('register') }}" class="menu-heading  fw-bold fs-5 text-success ">Register</a>
+                    @endif
+											</div>
+											<!--end:Menu content-->
+										</div>
+                @endguest
+                
+                @auth
 								<div class="app-navbar-item ms-1 ms-md-4" id="kt_header_user_menu_toggle">
 									<!--begin::Menu wrapper-->
 									<div class="cursor-pointer symbol symbol-35px" data-kt-menu-trigger="{default: 'click', lg: 'hover'}" data-kt-menu-attach="parent" data-kt-menu-placement="bottom-end">
@@ -4877,14 +4904,23 @@
 										</div>
 										<!--end::Menu item-->
 										<!--begin::Menu item-->
-										<div class="menu-item px-5">
-											<a href="authentication/layouts/corporate/sign-in.html" class="menu-link px-5">Sign Out</a>
-										</div>
+                    
+										<form id="logout-form" method="POST" action="{{ route('logout') }}" style="display: none;">
+    @csrf
+</form>
+
+<div class="menu-item px-5">
+    <a href="#" class="menu-link px-5" 
+       onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+       Sign Out
+    </a>
+</div>
 										<!--end::Menu item-->
 									</div>
 									<!--end::User account menu-->
 									<!--end::Menu wrapper-->
 								</div>
+                @endauth
 								<!--end::User menu-->
 								<!--begin::Header menu toggle-->
 								<div class="app-navbar-item d-lg-none ms-2 me-n2" title="Show header menu">
